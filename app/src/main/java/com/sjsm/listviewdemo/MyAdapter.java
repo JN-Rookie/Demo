@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.Map;
@@ -96,6 +97,26 @@ public class MyAdapter extends BaseAdapter implements PinnedSectionListView.Pinn
             viewHold.text.setText(mData.get(position).get("text"));
             viewHold.info.setText(mData.get(position).get("info"));
 
+            viewHold.tv_check.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContext,"查看",Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            viewHold.tv_check.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContext,"修改",Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            viewHold.tv_check.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(mContext,"删除",Toast.LENGTH_SHORT).show();
+                }
+            });
         }
         return convertView;
     }
